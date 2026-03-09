@@ -1,0 +1,45 @@
+[project]
+name = "avogadro-chiraltube"
+version = "0.1.0"
+description = "Generate chiral nanotubes for Avogadro 2 using chiraltube"
+authors = [
+    {name = "Jose M. de Albornoz Caratozzolo"},
+    {name = "Felipe Cervantes Sodi"},
+    {name = "Geoff Hutchison", email = "geoff.hutchison@gmail.com"},
+]
+license = "BSD-3-Clause"
+requires-python = ">= 3.10"
+
+[project.scripts]
+avogadro-chiraltube = "avogadro_chiraltube:main"
+
+[build-system]
+build-backend = "uv_build"
+requires = ["uv_build>=0.10.2,<0.11.0"]
+
+[tool.avogadro]
+minimum-avogadro-version = "1.103"
+
+[[tool.avogadro.menu-commands]]
+identifier = "nanotube"
+menu = "Build"
+submenu = "Insert"
+item = "Nanotube..."
+user-options = "src/avogadro_chiraltube/nanotube-options.json"
+
+[[tool.avogadro.menu-commands]]
+identifier = "nanoribbon"
+menu = "Build"
+submenu = "Insert"
+item = "Nanoribbon..."
+user-options = "src/avogadro_chiraltube/nanotube-options.json"
+
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+avogadro-chiraltube = { path = ".", editable = true }
+
+[tool.pixi.tasks]

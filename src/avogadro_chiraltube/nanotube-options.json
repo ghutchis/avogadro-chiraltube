@@ -1,0 +1,12 @@
+{
+    "n": {"type": "integer", "label": "n", "minimum": 1, "default": 5, "order": 0},
+    "m": {"type": "integer", "label": "m", "minimum": 1, "default": 5, "order": 1},
+    "repeats": {"type": "integer", "label": "Repeats", "minimum": 1, "default": 1, "order": 2},
+    "material": {
+        "label": "Material",
+        "type": "stringList",
+        "default": 0,
+        "values": ["Graphene", "Boron Nitride", "Phosphorene", "MoS\u2082", "Ti\u2083C\u2082"],
+        "order": 3
+    }
+}
